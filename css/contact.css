@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #f0fd00; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 146px;
+    position: relative; /* Ensure it stacks above other content */
+    z-index: 2; /* Ensure navbar is above the black background */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 80px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.about:hover img {
+    content: url('images/about2.png');
+}
+
+.portfolio:hover img {
+    content: url('images/portfolio2.png');
+}
+
+.services:hover img {
+    content: url('images/services2.png');
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.466);
+    font-size: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Yellow Background Section */
+/* Contact Section Styles */
+.yellow-background {
+    background-color: #f0fd00; /* Yellow background */
+    width: 100%;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.left-side {
+    flex: 1;
+    padding: 20px; /* General padding */
+    margin-left: 7%; /* Move to the right */
+}
+
+.left-side h1 {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 48px; /* Adjust size as needed */
+    color: #313131; /* Text color */
+    text-decoration: underline;
+    text-shadow: 0 0 2px #000; /* Add a subtle shadow for better readability */  
+    margin-bottom: 20px;
+}
+
+.left-side p {
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-size: 18px; /* Adjust size as needed */
+    margin: 20px 0; /* Space between the heading and paragraph */
+    margin-bottom: 20px;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px; /* Space between the social media icons */
+}
+
+.social-media-img {
+    display: block; /* Remove extra space below the image */
+    margin: 10px auto; /* Center the image horizontally */
+}
+
+.youtube{
+width: 100%; /* Full width for responsiveness */
+max-width: 150px; /* Max width for larger screens */
+height: auto; /* Maintain aspect ratio */
+}
+
+ .instagram {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 85px; /* Max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 0; /* Remove margin for responsiveness */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .yellow-background {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .left-side, .right-side {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .left-side h1 {
+        font-size: 1.875rem; /* Adjust size as needed */
+    }
+
+    .left-side p {
+        font-size: 1rem; /* Adjust size as needed */
+    }
+
+    .social-media {
+        gap: 10px; /* Reduce gap between icons */
+    }
+
+    .youtube, .instagram {
+        max-width: 100px; /* Reduce size for smaller screens */
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .yellow-background {
+        flex-direction: column; /* Stack items vertically */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .left-side, .right-side {
+        padding: 15px; /* Adjust padding */
+    }
+
+    .left-side h1 {
+        font-size: 2.25rem; /* Adjust size as needed */
+    }
+
+    .left-side p {
+        font-size: 1.125rem; /* Adjust size as needed */
+    }
+
+    .social-media {
+        gap: 15px; /* Adjust gap between icons */
+    }
+
+    .youtube, .instagram {
+        max-width: 120px; /* Adjust size for medium screens */
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .yellow-background {
+        flex-direction: row; /* Horizontal layout */
+    }
+
+
+    .left-side h1 {
+        font-size: 2.5rem; /* Default size */
+    }
+
+    .left-side p {
+        font-size: 1.125rem; /* Default size */
+    }
+
+    .social-media {
+        gap: 20px; /* Default gap */
+    }
+
+    .youtube, .instagram {
+        max-width: 150px; /* Default size */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .yellow-background {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .right-side {
+        margin-top: 20px;
+    }
+
+    .left-side h1 {
+        font-size: 36px; /* Adjust size as needed */
+    }
+
+    .left-side p {
+        font-size: 16px; /* Adjust size as needed */
+    }
+
+    .social-media img {
+        width: 40px; /* Adjust size as needed */
+    }
+}
+
+@media (max-width: 768px) {
+    .left-side h1 {
+        font-size: 32px; /* Adjust size as needed */
+    }
+
+    .left-side p {
+        font-size: 14px; /* Adjust size as needed */
+    }
+
+    .social-media img {
+        width: 30px; /* Adjust size as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .left-side h1 {
+        font-size: 28px; /* Adjust size as needed */
+    }
+
+    .left-side p {
+        font-size: 12px; /* Adjust size as needed */
+    }
+
+    .social-media img {
+        width: 25px; /* Adjust size as needed */
+    }
+}
+
+.black-background {
+    width: 100%;
+    min-height: 970px; /* Ensure it takes up at least the full viewport height */
+    background-image: url('../images/contactbackground.jpg');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    position: relative; /* Allows positioning of child elements */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center content horizontally */
+    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.5); /* Shadow effect at the top */
+
+}
+
+/* Contact Section Styles */
+.list-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+
+.Contact h2 {
+    font-size: 30px;
+    color: #e4e4e4;
+    text-align: center;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.Contact form {
+    width: 680px; /* Width of the form */
+    text-align: center;
+    margin: 0 auto; /* Center the form */
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between; /* Space between the boxes */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.field .item {
+    width: 100%;
+    padding: 20px; /* Space inside the box */
+    background: transparent;
+    border: 2px solid #f0fd00cc;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    margin: 12px 0; /* Space between the top and bottom box */
+}
+
+.field.error .item {
+    border-color: #eb3942ee;
+}
+
+.field .item::placeholder {
+    color: rgb(129, 129, 129);
+}
+
+.field .error-txt {
+    font-size: 14.5px;
+    color: #eb3942ee;
+    text-align: left;
+    margin: -5px 0 10px; /* Only works on bottom spacing */
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
+form .textarea-field .item {
+    resize: none;
+}
+
+form .textarea-field .error-txt {
+    margin-top: -50px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .Contact h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .Contact form {
+        width: 100%; /* Full width for small screens */
+        padding: 0 20px; /* Add padding for small screens */
+    }
+
+    form .input-box {
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px; /* Space between the boxes */
+    }
+
+    .field .item {
+        font-size: 14px; /* Adjust font size */
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .Contact h2 {
+        font-size: 26px;
+        margin-bottom: 35px;
+    }
+
+    .Contact form {
+        width: 100%; /* Full width for medium screens */
+        padding: 0 40px; /* Add padding for medium screens */
+    }
+
+    form .input-box {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px; /* Space between the boxes */
+    }
+
+    .field .item {
+        font-size: 15px; /* Adjust font size */
+        padding: 18px; /* Adjust padding */
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .Contact h2 {
+        font-size: 30px; /* Default size */
+        margin-bottom: 40px; /* Default margin */
+    }
+
+    .Contact form {
+        width: 680px; /* Default width */
+        padding: 0; /* Remove extra padding */
+    }
+
+    form .input-box {
+        flex-direction: row; /* Horizontal layout */
+        gap: 20px; /* Default gap */
+    }
+
+    .field .item {
+        font-size: 16px; /* Default font size */
+        padding: 20px; /* Default padding */
+    }
+}
+
+.bn632-hover {        /*for the button*/
+    width: 180px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 60px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn28 {
+    background-image: linear-gradient(
+      to right,
+      #eb3941,
+      #c8e237,
+      #e14e53,
+      #c8e237
+    );
+    box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+  }
+
+  .copyright-text {
+    font-family: 'Century Gothic', sans-serif; /* Use the desired font */
+    font-size: 14px; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    color: #ffffffce; /* White text color */
+    margin-top: 5px; /* Space above the text */
+    margin-bottom: 15px; /* Optional: Space below the text */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Adjust space between the icons */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.instagram-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.youtube-icon {
+    width: 68px;
+    height: 49px;
+}
+
+.social-media-icons a {
+    display: inline-block;
+    transition: filter 0.3s ease; /* Smooth transition for the color change */
+}
+
+.social-media-icons a:hover .instagram-icon,
+.social-media-icons a:hover .youtube-icon {
+    filter: invert(31%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(96%) contrast(104%); /* Apply red color filter */
+}
+
+/* Specific styles for each icon */
+.instagram-icon,
+.youtube-icon {
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}

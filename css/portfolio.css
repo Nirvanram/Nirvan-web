@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #e8fa08; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 146px;
+    position: relative; /* Ensure it stacks above other content */
+    z-index: 2; /* Ensure navbar is above the black background */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 80px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.about:hover img {
+    content: url('images/about2.png');
+}
+
+.portfolio:hover img {
+    content: url('images/portfolio2.png');
+}
+
+.services:hover img {
+    content: url('images/services2.png');
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.466);
+    font-size: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+/* For the black background section */
+.black-background {
+    width: 100%;
+    min-height: 100vh; /* Use viewport height to cover the screen */
+    background-color: black;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    position: relative; /* Allows for layering of content */
+    overflow: hidden; /* Ensures no overflow issues */
+    z-index: 1; /* Ensure black background is below navbar */
+}
+
+/* Details inside black background */
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1700px;
+    margin: 90px auto; /* Center horizontally and add margin-top */
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
+    position: relative; /* Changed from absolute to relative */
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #fff; /* Line color */
+    margin: 0 20px; /* Space between the lines and the text */
+}
+
+.services-container h2 {
+    margin: 0;
+    color: #fff; /* Text color */
+    font-size: 40px; /* Adjust size as needed */
+    font-family: 'Century Gothic', sans-serif; /* Set the font to Century Gothic */
+    text-shadow: 0 0 4px #ffff00a9;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .services-container {
+        margin-top: 80px; /* Adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 35px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 0 15px; /* Adjust space between lines and text */
+    }
+}
+
+@media (max-width: 800px) {
+    .services-container {
+        margin-top: 60px; /* Further adjust top margin */
+        flex-direction: column; /* Stack lines and text vertically */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .line {
+        margin: 10px 0; /* Space between lines and text in vertical layout */
+        width: 60%; /* Adjust line width */
+    }
+
+    .services-container h2 {
+        font-size: 30px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        margin-top: 40px; /* Further adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 25px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 5px 0; /* Adjust space between lines and text in vertical layout */
+        width: 70%; /* Ensure the line is visible and has some width */
+    }
+}
+
+/* Yellow Background Section */
+.yellow-background {
+    background-color: #e8fa08; /* Yellow background */
+    padding: 20px; /* Add padding around the section */
+    position: relative; /* Establish positioning context for child elements */
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    margin-top: 50px; /* Add margin-top to create a gap from the black background */
+}
+
+/* Container for images with 3D effect */
+.images-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e8fa08;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Changed from absolute to relative */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+/* Responsive adjustments for .images-list */
+@media (max-width: 768px) {
+    .images-list {
+        min-height: 80vh; /* Adjust height for smaller screens */
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+}
+
+.box {
+    position: relative;
+    width: 300px; /* Adjusted size for responsiveness */
+    height: 300px; /* Adjusted size for responsiveness */
+    transform-style: preserve-3d;
+    transition: 1.5s;
+    transform: rotateY(0deg);
+}
+
+/* Adjust box size for very small screens */
+@media (max-width: 480px) {
+    .box {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(300px); /* Spread images evenly in 3D space */
+}
+
+.box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box .content a {
+    display: block; /* Ensure anchor tag covers the image */
+    width: 100%;
+    height: 100%;
+}
+
+.box .content img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    user-select: none;
+}
+
+.box .content .caption { /* Text for the image */
+    margin-top: 10px;
+    margin-bottom: 20px; /* Add space below the text */
+    color: #ff0000;
+    font-size: 18px; /* Fixed font size */
+    padding: 5px;
+}
+
+/* Wheel position and style adjustments */
+.wheel {
+    position: fixed; /* Fixed position to viewport */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center align */
+    display: flex;
+    gap: 30px; /* Space between buttons */
+    z-index: 1000; /* Ensure it’s above other elements */
+    background: #e8fa08; /* Optional: background to prevent overlap issues */
+    padding: 10px; /* Optional: padding to ensure it doesn’t overlap */
+}
+
+/* Adjust wheel button size for smaller screens */
+@media (max-width: 768px) {
+    .wheel {
+        gap: 20px; /* Reduce gap between buttons */
+    }
+}
+
+.btn {
+    position: relative;
+    width: 50px; /* Adjusted width for responsiveness */
+    height: 50px; /* Adjusted height for responsiveness */
+    border: 2px solid #ff0000; /* Border color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wheel .btn:active {
+    background: #fff; /* Color of the circle when clicked */
+}
+
+.wheel .btn::before { /* Arrow color before clicking */
+    content: '';
+    position: absolute;
+    width: 10px; /* Adjusted width for responsiveness */
+    height: 10px; /* Adjusted height for responsiveness */
+    border-top: 4px solid #ff0000;
+    border-right: 4px solid #ff0000;
+    transform: rotate(45deg) translate(-2.5px, 2.5px);
+}
+
+.wheel .btn.prev::before {
+    transform: rotate(225deg) translate(-2.5px, 2.5px);
+}
+
+.wheel .btn:active::before { /* Arrow changing color when clicked */
+    border-top: 4px solid #000;
+    border-right: 4px solid #000;
+}
+
+.black-backgrounds {
+    background-color: #000000; /* Black background color */
+    color: #ffffff; /* White text color */
+    padding: 40px; /* Padding around the content */
+    text-align: center; /* Center align text and icons */
+    position: relative; /* Ensure it’s positioned relative to the document */
+    z-index: 2; /* Ensure it appears above .images-list */
+}
+
+.copyright-text {
+    font-family: 'Century Gothic', sans-serif; /* Use the desired font */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #ffffffce; /* White text color */
+    margin: 0; /* Remove default margins */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Adjust space between the icons */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.instagram-icon,
+.youtube-icon {
+    width: 48px; /* Default width for icons */
+    height: 48px; /* Default height for icons */
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.youtube-icon {
+    width: 68px; /* Specific width for YouTube icon */
+    height: 49px; /* Specific height for YouTube icon */
+}
+
+.social-media-icons a {
+    display: inline-block;
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-media-icons a:hover .instagram-icon,
+.social-media-icons a:hover .youtube-icon {
+    filter: invert(31%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(96%) contrast(104%); /* Apply red color filter */
+}

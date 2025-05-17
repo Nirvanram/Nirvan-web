@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #e8fa08; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 146px;
+    position: relative; /* Ensure it stacks above other content */
+    z-index: 2; /* Ensure navbar is above the black background */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 80px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.about:hover img {
+    content: url('images/about2.png');
+}
+
+.portfolio:hover img {
+    content: url('images/portfolio2.png');
+}
+
+.services:hover img {
+    content: url('images/services2.png');
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.466);
+    font-size: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* For the black background section */
+.black-background {
+    width: 100%;
+    min-height: 100vh; /* Use viewport height to cover the screen */
+    background-color: black;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    position: relative; /* Allows for layering of content */
+    overflow: hidden; /* Ensures no overflow issues */
+    z-index: 1; /* Ensure black background is below navbar */
+}
+
+/* Details inside black background */
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1700px;
+    margin: 90px auto; /* Center horizontally and add margin-top */
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
+    position: relative; /* Changed from absolute to relative */
+}
+
+.line2 {
+    flex: 1;
+    height: 1px;
+    background-color: #fff; /* Line color */
+    margin: 0 20px; /* Space between the lines and the text */
+}
+
+.services-container h2 {
+    margin: 0;
+    color: #fff; /* Text color */
+    font-size: 40px; /* Adjust size as needed */
+    font-family: 'Century Gothic', sans-serif; /* Set the font to Century Gothic */
+    text-shadow: 0 0 4px #ffff00a9;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .services-container {
+        margin-top: 80px; /* Adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 35px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 0 15px; /* Adjust space between lines and text */
+    }
+}
+
+@media (max-width: 800px) {
+    .services-container {
+        margin-top: 60px; /* Further adjust top margin */
+        flex-direction: column; /* Stack lines and text vertically */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .line {
+        margin: 10px 0; /* Space between lines and text in vertical layout */
+        width: 60%; /* Adjust line width */
+    }
+
+    .services-container h2 {
+        font-size: 30px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        margin-top: 40px; /* Further adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 25px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 5px 0; /* Adjust space between lines and text in vertical layout */
+        width: 70%; /* Ensure the line is visible and has some width */
+    }
+}
+
+.client-work-container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 0; /* No space between the yellow box and the image */
+    margin: 50px auto; /* Space from the previous section and center horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Default styles for larger screens */
+.yellow-box {
+    width: 672px;
+    height: 560px;
+    background-color: #fffc00;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally inside the yellow box */
+    justify-content: center; /* Center content vertically inside the yellow box */
+    box-sizing: border-box; /* Ensure padding is included in the box dimensions */
+    padding: 50px; /* Add padding inside the yellow box */
+}
+
+.yellow-box-image {
+    width: 470px; /* Set image width */
+    height: 143px; /* Set image height */
+    display: block; /* Remove extra space below the image */
+    margin-bottom: 20px; /* Space between image and paragraph */
+}
+
+.yellow-box-paragraph {
+    font-family: 'Franklin Gothic Medium', sans-serif; /* Font for the paragraph */
+    font-size: 18px; /* Adjust font size as needed */
+    color: #2c2c2c; /* Text color */
+    text-align: justify; /* Justify text */
+    line-height: 1.4; /* Line spacing */
+    text-align-last: center; /* Center the last line */
+    width: 100%; /* Ensure the text takes the full width available */
+}
+
+.right-image img {
+    width: 672px;
+    height: 560px; /* Match height to the yellow box */
+    display: block; /* Remove extra space below the image */
+    box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.5); /* Shadow on the left side */
+}
+
+/* Styles for tablets and smaller screens */
+@media (max-width: 1024px) {
+    .yellow-box,
+    .right-image img {
+        width: 100%;
+        height: auto;
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+
+    .yellow-box-image {
+        width: 100%; /* Set image width to 100% */
+        height: auto; /* Auto height to maintain aspect ratio */
+        margin-bottom: 15px; /* Adjust margin for smaller screens */
+    }
+
+    .yellow-box-paragraph {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 768px) {
+    .client-work-container {
+        flex-direction: column; /* Stack boxes vertically on mobile */
+    }
+
+    .yellow-box,
+    .right-image img {
+        width: 100%;
+        height: auto;
+        padding: 20px; /* Adjust padding for mobile screens */
+    }
+
+    .yellow-box-image {
+        width: 100%; /* Set image width to 100% */
+        height: auto; /* Auto height to maintain aspect ratio */
+        margin-bottom: 10px; /* Adjust margin for mobile screens */
+    }
+
+    .yellow-box-paragraph {
+        font-size: 14px; /* Adjust font size for mobile screens */
+    }
+}
+
+/* Ensure the parent container of the line is responsive */
+.line-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center align the line */
+    padding: 0 30px; /* Optional: Add some padding for small screens */
+}
+
+/* Style for the responsive line */
+.line {
+    width: 100%; /* Line takes full width of its container */
+    max-width: 1650px; /* Ensure the line doesn't exceed 1500px */
+    height: 1px; /* Thickness of the line */
+    background-color: #fff; /* Color of the line */
+    margin: 50px 0; /* Space around the line */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* General Styles */
+.menu-card-, .billboard-card-, .E-newsletter {
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    margin-top: 70px; /* Space above and below the text */
+}
+
+.menu-card-text, .billboard-card-text, .E-newsletter-text {
+    font-family: 'Franklin Gothic Heavy', sans-serif; /* Font for the text */
+    font-size: 38px; /* Adjust size as needed */
+    color: #fff; /* Text color */
+    margin: 0; /* Remove default margins */
+    border-bottom: 2px solid #fff; /* Underline */
+}
+
+.menu-image, .billboard-image, .E-newsletter-image {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    margin: 30px auto; /* Space from the previous section and center horizontally */
+    padding: 0 10px; /* Add padding to prevent images from touching the edges */
+}
+
+.menu-box, .billboard-box, .E-newsletter-box {
+    flex: 1 1 auto; /* Allow the image boxes to grow and shrink */
+    display: flex;
+    justify-content: center; /* Center image horizontally inside the box */
+}
+
+.menu-box img, .billboard-box img, .E-newsletter-box img {
+    width: 100%; /* Ensure the image scales responsively */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove extra space below the image */
+    padding-right: 20px;
+}
+
+/* Specific max-width for each section */
+.menu-box {
+    max-width: 428px;
+}
+
+.billboard-box {
+    max-width: 858px;
+}
+
+.E-newsletter-box {
+    max-width: 737px;
+}
+
+/* Responsive Styles */
+
+/* Tablet and Smaller Screens */
+@media (max-width: 1024px) {
+    .menu-card-text, .billboard-card-text, .E-newsletter-text {
+        font-size: 32px; /* Adjust font size for tablets */
+    }
+    
+    .menu-box, .billboard-box, .E-newsletter-box {
+        max-width: 100%;
+        padding: 20px; /* Add padding for better spacing */
+    }
+    
+    .menu-box img, .billboard-box img, .E-newsletter-box img {
+        max-height: none; /* Remove max-height constraint for better scaling */
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .menu-card-text, .billboard-card-text, .E-newsletter-text {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+    
+    .menu-card-, .billboard-card-, .E-newsletter {
+        margin-top: 50px; /* Adjust margin for mobile */
+    }
+    
+    .menu-box, .billboard-box, .E-newsletter-box {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+    
+    .menu-box img, .billboard-box img, .E-newsletter-box img {
+        max-height: none; /* Remove max-height constraint for better scaling */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .menu-card-text, .billboard-card-text, .E-newsletter-text {
+        font-size: 24px; /* Adjust font size for extra small screens */
+    }
+    
+    .menu-card-, .billboard-card-, .E-newsletter {
+        margin-top: 30px; /* Adjust margin for extra small screens */
+    }
+    
+    .menu-box, .billboard-box, .E-newsletter-box {
+        padding: 5px; /* Adjust padding for extra small screens */
+    }
+}
+
+.copyright-text {
+    font-family: 'Century Gothic', sans-serif; /* Use the desired font */
+    font-size: 14px; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    color: #ffffffce; /* White text color */
+    margin-top: 30px; /* Space above the text */
+    margin-bottom: 15px; /* Optional: Space below the text */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Adjust space between the icons */
+    margin-top: 10px; /* Space above the icons */
+    margin-bottom: 70px;
+}
+
+.instagram-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.youtube-icon {
+    width: 68px;
+    height: 49px;
+}
+
+.social-media-icons a {
+    display: inline-block;
+    transition: filter 0.3s ease; /* Smooth transition for the color change */
+}
+
+.social-media-icons a:hover .instagram-icon,
+.social-media-icons a:hover .youtube-icon {
+    filter: invert(31%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(96%) contrast(104%); /* Apply red color filter */
+}
+
+/* Specific styles for each icon */
+.instagram-icon,
+.youtube-icon {
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}

@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #e8fa08; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 146px;
+    position: relative; /* Ensure it stacks above other content */
+    z-index: 2; /* Ensure navbar is above the black background */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 80px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.about:hover img {
+    content: url('images/about2.png');
+}
+
+.portfolio:hover img {
+    content: url('images/portfolio2.png');
+}
+
+.services:hover img {
+    content: url('images/services2.png');
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.466);
+    font-size: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* For the black background section */
+.black-background {
+    width: 100%;
+    min-height: 100vh; /* Use viewport height to cover the screen */
+    background-color: black;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    position: relative; /* Allows for layering of content */
+    overflow: hidden; /* Ensures no overflow issues */
+    z-index: 1; /* Ensure black background is below navbar */
+}
+
+/* Details inside black background */
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1700px;
+    margin: 90px auto; /* Center horizontally and add margin-top */
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
+    position: relative; /* Changed from absolute to relative */
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #fff; /* Line color */
+    margin: 0 20px; /* Space between the lines and the text */
+}
+
+.services-container h2 {
+    margin: 0;
+    color: #fff; /* Text color */
+    font-size: 40px; /* Adjust size as needed */
+    font-family: 'Century Gothic', sans-serif; /* Set the font to Century Gothic */
+    text-shadow: 0 0 4px #ffff00a9;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .services-container {
+        margin-top: 80px; /* Adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 35px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 0 15px; /* Adjust space between lines and text */
+    }
+}
+
+@media (max-width: 800px) {
+    .services-container {
+        margin-top: 60px; /* Further adjust top margin */
+        flex-direction: column; /* Stack lines and text vertically */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .line {
+        margin: 10px 0; /* Space between lines and text in vertical layout */
+        width: 60%; /* Adjust line width */
+    }
+
+    .services-container h2 {
+        font-size: 30px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        margin-top: 40px; /* Further adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 25px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 5px 0; /* Adjust space between lines and text in vertical layout */
+        width: 70%; /* Ensure the line is visible and has some width */
+    }
+}
+
+.yellow-background {
+    background-color: #e8fa08; /* Yellow background color */
+    padding: 30px; /* Padding around the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.top-row, .bottom-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Center images horizontally within each row */
+    gap: 20px; /* Space between images */
+    margin-bottom: 20px; /* Space below each row */
+}
+
+.top-row img, .bottom-row img {
+    width: 100%; /* Full width of the container */
+    max-width: 418px; /* Maximum width of each image */
+    height: auto; /* Maintain aspect ratio */
+    border: 5px solid #ffffff; /* White border around images */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for better contrast */
+    object-fit: cover; /* Crop and cover the image within its dimensions */
+}
+
+/* Ensuring images stack vertically as the viewport width decreases */
+@media (max-width: 615px) {
+    .top-row img, .bottom-row img {
+        width: 100%; /* Full width of the container */
+    }
+}
+
+
+
+.black-backgrounds {
+    background-color: #000000; /* Black background color */
+    color: #ffffff; /* White text color */
+    padding: 40px; /* Padding around the content */
+    text-align: center; /* Center align text and icons */
+    position: relative; /* Ensure it’s positioned relative to the document */
+    z-index: 2; /* Ensure it appears above .images-list */
+}
+
+.copyright-text {
+    font-family: 'Century Gothic', sans-serif; /* Use the desired font */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #ffffffce; /* White text color */
+    margin: 0; /* Remove default margins */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Adjust space between the icons */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.instagram-icon,
+.youtube-icon {
+    width: 48px; /* Default width for icons */
+    height: 48px; /* Default height for icons */
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.youtube-icon {
+    width: 68px; /* Specific width for YouTube icon */
+    height: 49px; /* Specific height for YouTube icon */
+}
+
+.social-media-icons a {
+    display: inline-block;
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-media-icons a:hover .instagram-icon,
+.social-media-icons a:hover .youtube-icon {
+    filter: invert(31%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(96%) contrast(104%); /* Apply red color filter */
+}

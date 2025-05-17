@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #e8fa08; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 146px;
+    position: relative; /* Ensure it stacks above other content */
+    z-index: 2; /* Ensure navbar is above the black background */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 80px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.about:hover img {
+    content: url('images/about2.png');
+}
+
+.portfolio:hover img {
+    content: url('images/portfolio2.png');
+}
+
+.services:hover img {
+    content: url('images/services2.png');
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.466);
+    font-size: 18px;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+/* For the black background section */
+.black-background {
+    width: 100%;
+    min-height: 100vh; /* Use viewport height to cover the screen */
+    background-color: black;
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    position: relative; /* Allows for layering of content */
+    overflow: hidden; /* Ensures no overflow issues */
+    z-index: 0; /* Ensure black background is below navbar */
+}
+/*details inside black background*/
+
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1700px;
+    margin: 105px auto 20px; /* Center horizontally and add margin-top */
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
+    position: relative; /* Changed from absolute to relative */
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #fff; /* Line color */
+    margin: 0 20px; /* Space between the lines and the text */
+}
+
+.services-container h2 {
+    margin: 0;
+    color: #fff; /* Text color */
+    font-size: 40px; /* Adjust size as needed */
+    font-family: 'Century Gothic', sans-serif; /* Set the font to Century Gothic */
+    text-shadow: 0 0 4px #ffff00a9;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .services-container {
+        margin-top: 80px; /* Adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 35px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 0 15px; /* Adjust space between lines and text */
+    }
+}
+
+@media (max-width: 800px) {
+    .services-container {
+        margin-top: 60px; /* Further adjust top margin */
+        flex-direction: column; /* Stack lines and text vertically */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .line {
+        margin: 10px 0; /* Space between lines and text in vertical layout */
+        width: 60%; /* Adjust line width */
+    }
+
+    .services-container h2 {
+        font-size: 30px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        margin-top: 40px; /* Further adjust top margin */
+    }
+
+    .services-container h2 {
+        font-size: 25px; /* Smaller font size */
+    }
+
+    .line {
+        margin: 5px 0; /* Adjust space between lines and text in vertical layout */
+        width: 70%; /* Ensure the line is visible and has some width */
+    }
+}
+
+
+/* General container styling */
+.boxes-container, .new-boxes-container, .last-boxes-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap onto multiple lines */
+    justify-content: center; /* Center boxes horizontally */
+    gap: 20px; /* Space between boxes */
+    padding: 20px; /* Padding around the container */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0 auto; /* Center container and prevent overflow */
+}
+
+/* Box styling */
+.box, .new-box, .last-box {
+    flex: 1 1 300px; /* Allow boxes to grow and shrink, with a base width of 300px */
+    max-width: 530px; /* Maximum width for responsiveness */
+    min-width: 250px; /* Minimum width to ensure boxes don't get too small */
+    height: auto; /* Allow height to adjust based on content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Padding inside the box */
+    background-color: #f3ef10; /* Background color */
+    overflow: hidden; /* Prevent overflow of content */
+}
+
+/* Box content styling */
+.box-content {
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Image styling */
+.box-image {
+    max-width: 100%; /* Ensure image fits within the box */
+    height: auto; /* Maintain aspect ratio of images */
+    margin-bottom: 10px; /* Space between the image and text */
+    filter: drop-shadow(1px 2px 3px rgba(63, 63, 63, 0.5)); /* Drop shadow effect */
+}
+
+/* Text styling for all boxes */
+.box h3, .new-box .box-content h3, .last-box .box-content h3 {
+    margin: 20px 0; /* Space above and below the heading */
+    text-decoration: underline; /* Underline text */
+    font-family: 'Franklin Gothic Demi Cond', sans-serif;
+    font-size: 30px;
+    color: #ff0000; /* Heading color */
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); /* Text shadow effect */
+}
+
+/* Paragraph styling for all boxes */
+.box p, .new-box .box-content p, .last-box .box-content p {
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-size: 16px;
+    line-height: 1.3; /* Line height for readability */
+    text-align: justify; /* Justify text alignment */
+    text-align-last: center; /* Center-align the last line */
+    max-width: 95%; /* Limit text width within box */
+    margin: 0 auto; /* Center-align the text block */
+    color: #2c2c2c; /* Text color */
+    padding: 0 15px; /* Padding inside paragraph */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Specific sizes for images */
+.box-image-photoediting { width: 207px; height: 174px; }
+.box-image-logo-design { width: 172px; height: 172px; }
+.box-image-video-editing { width: 206px; height: 174px; }
+.box-image-one { width: 127px; height: 168px; }
+.box-image-two { width: 176px; height: 176px; }
+.box-image-three { width: 185px; height: 184px; }
+.box-image-poster { width: 119px; height: 174px; }
+.box-image-branding { width: 268px; height: 144px; margin: 20px; }
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .boxes-container, .new-boxes-container, .last-boxes-container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .box, .new-box, .last-box {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: none; /* Remove max-width constraint */
+        min-width: 100%; /* Full width on small screens */
+    }
+
+    .box h3, .new-box .box-content h3, .last-box .box-content h3 {
+        font-size: 24px; /* Adjust font size */
+    }
+
+    .box p, .new-box .box-content p, .last-box .box-content p {
+        font-size: 14px; /* Adjust font size */
+        padding: 0 10px; /* Adjust padding */
+    }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .boxes-container, .new-boxes-container, .last-boxes-container {
+        padding: 15px; /* Adjust padding */
+    }
+
+    .box, .new-box, .last-box {
+        flex: 1 1 45%; /* Two boxes per row */
+        max-width: none; /* Remove max-width constraint */
+        min-width: 45%; /* Two boxes per row */
+    }
+
+    .box h3, .new-box .box-content h3, .last-box .box-content h3 {
+        font-size: 26px; /* Adjust font size */
+    }
+
+    .box p, .new-box .box-content p, .last-box .box-content p {
+        font-size: 15px; /* Adjust font size */
+        padding: 0 12px; /* Adjust padding */
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .boxes-container, .new-boxes-container, .last-boxes-container {
+        padding: 20px; /* Default padding */
+    }
+
+    .box, .new-box, .last-box {
+        flex: 1 1 300px; /* Default width for large screens */
+        max-width: 530px; /* Default max width */
+    }
+
+    .box h3, .new-box .box-content h3, .last-box .box-content h3 {
+        font-size: 30px; /* Default font size */
+    }
+
+    .box p, .new-box .box-content p, .last-box .box-content p {
+        font-size: 16px; /* Default font size */
+        padding: 0 15px; /* Default padding */
+    }
+}
+
+.copyright-text {
+    font-family: 'Century Gothic', sans-serif; /* Use the desired font */
+    font-size: 14px; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    color: #ffffffce; /* White text color */
+    margin-top: 90px; /* Space above the text */
+    margin-bottom: 15px; /* Optional: Space below the text */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    gap: 20px; /* Adjust space between the icons */
+    margin-top: 10px; /* Space above the icons */
+    margin-bottom: 40px;
+}
+
+.instagram-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.youtube-icon {
+    width: 68px;
+    height: 49px;
+}
+
+.social-media-icons a {
+    display: inline-block;
+    transition: filter 0.3s ease; /* Smooth transition for the color change */
+}
+
+.social-media-icons a:hover .instagram-icon,
+.social-media-icons a:hover .youtube-icon {
+    filter: invert(31%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(96%) contrast(104%); /* Apply red color filter */
+}
+
+/* Specific styles for each icon */
+.instagram-icon,
+.youtube-icon {
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
