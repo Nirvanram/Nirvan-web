@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <script>
+        function showSidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <nav>
+        <!-- Sidebar for mobile view -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/portfolio.html">Portfolio</a></li>
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Desktop view -->
+        <ul>
+            <li><a href="../index.html"><img src="../images/logo.png" class="logo" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="../html/about.html"><img src="../images/about.png" alt="About" class="about"></a></li>
+            <li class="hideOnMobile"><a href="../html/portfolio.html"><img src="../images/portfolio.png" alt="Portfolio" class="portfolio"></a></li>
+            <li class="hideOnMobile"><a href="../html/services.html"><img src="../images/services.png" alt="Services" class="services"></a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html"><img src="../images/CONTACT.png" alt="Contact"></a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="yellow-background">
+        <div class="left-side">
+            <h1>Contact Me</h1>
+            <p>Get in touch with me via my social media or email.</p>
+            <div class="social-media">
+                <a href="https://www.youtube.com/watch?v=snWVW9oR4Zc&ab_channel=NirvanRamdoss" target="_blank">
+                <img src="../images/youtubecontact.png" alt="YouTube" class="social-media-img youtube"></a> 
+                <a href="https://www.instagram.com/_huntex/" target="_blank">
+                <img src="../images/instagramcontact.png" alt="Instagram" class="social-media-img instagram"></a>
+            </div>
+        </div>
+        <div class="right-side">
+            <img src="../images/mecontact.jpg" alt="Big Picture">
+        </div>
+    </section>
+
+
+    <div class="black-background">
+        <div class="list-contact">
+    <section class="Contact">
+        <h2>We'll be waiting for you :)</h2>
+    
+        <form action="#">
+            <div class="input-box">
+                <div class="input-field field">
+                    <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
+                    <div class="error-txt">Full Name can't be blank</div>
+                    </div>
+                    <div class="input-field field">
+                        <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+                        <div class="error-txt email">Email Address can't be blank</div>
+                        </div>
+                </div>
+    
+                <div class="input-box">
+                    <div class="input-field field">
+                        <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off">
+                        <div class="error-txt">Phone Number can't be blank</div>
+                        </div>
+                        <div class="input-field field">
+                            <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+                            <div class="error-txt">Subject can't be blank</div>
+                            </div>
+            </div>
+            <div class="textare-field field">
+            <textarea name="" id="message" cols="30" rows="10" placeholder="Description" class="item" autocomplete="off"></textarea>
+            <div class="error-txt">Description can't be blank</div>
+        </div>
+    
+        <div class="click-here-container">
+            <a href="/"><button class="bn632-hover bn28">SEND</button></a>
+        </div>    
+            </form>
+    </section>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="../java/java.js"></script>
+    </div>
+    
+
+    <p class="copyright-text">© 2024 • NIRVAN RAMDOSS • ALL RIGHTS RESERVED</p>
+
+
+    <div class="social-media-icons">
+        <a href="https://www.instagram.com/_huntex/" target="_blank"><img src="../images/instagram.png" alt="Instagram" class="instagram-icon"></a>
+        <a href="https://www.youtube.com/watch?v=snWVW9oR4Zc&ab_channel=NirvanRamdoss" target="_blank"><img src="../images/youtube.png" alt="YouTube" class="youtube-icon"></a>
+    </div>
+    
+    </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <script>
+        function showSidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <nav>
+        <!-- Sidebar for mobile view -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/portfolio.html">Portfolio</a></li>
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Desktop view -->
+        <ul>
+            <li><a href="../index.html"><img src="../images/logo.png" class="logo" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="../html/about.html"><img src="../images/about.png" alt="About" class="about"></a></li>
+            <li class="hideOnMobile"><a href="../html/portfolio.html"><img src="../images/portfolio.png" alt="Portfolio" class="portfolio"></a></li>
+            <li class="hideOnMobile"><a href="../html/services.html"><img src="../images/services.png" alt="Services" class="services"></a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html"><img src="../images/CONTACT.png" alt="Contact"></a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="black-background">
+        <div class="services-container">
+			<div class="line"></div>
+			<h2>PORTFOLIO</h2>
+			<div class="line"></div>
+		</div>
+
+        <div class="images-list">
+            <div class="box">
+                <span style="--i:0;">
+                    <div class="content">
+                        <a href="../html/posters.html" target="_blank">
+                            <img src="../images/portfolioposter.jpg" alt="Portfolio Poster">
+                        </a>
+                        <p class="caption">POSTER</p>
+                    </div>
+                </span>
+                <span style="--i:1;">
+                    <div class="content">
+                        <a href="../html/client.html" target="_blank">
+                            <img src="../images/portfolioclient.jpg" alt="Portfolio Client">
+                        </a>
+                        <p class="caption">CLIENT WORK</p>
+                    </div>
+                </span>
+                <span style="--i:2;">
+                    <div class="content">
+                        <a href="../html/photo manipulation.html" target="_blank">
+                            <img src="../images/portfoliophotomanipulation.jpg" alt="Portfolio Photo Manipulation">
+                        </a>
+                        <p class="caption">PHOTO MANIPULATION</p>
+                    </div>
+                </span>
+                <span style="--i:3;">
+                    <div class="content">
+                        <a href="../html/logo.html" target="_blank">
+                            <img src="../images/portfoliologo.jpg" alt="Portfolio Logo">
+                        </a>
+                        <p class="caption">LOGO</p>
+                    </div>
+                </span>
+            </div>
+        
+       
+        
+        
+            <div class="wheel">
+                <div class="btn prev"></div>
+                <div class="btn next"></div>
+            </div>
+        </div>
+
+        <div class="black-backgrounds">
+            <p class="copyright-text">© 2024 • NIRVAN RAMDOSS • ALL RIGHTS RESERVED</p>
+            <div class="social-media-icons">
+                <a href="https://www.instagram.com/_huntex/" target="_blank"><img src="../images/instagram.png" alt="Instagram" class="instagram-icon"></a>
+                <a href="https://www.youtube.com/watch?v=snWVW9oR4Zc&ab_channel=NirvanRamdoss" target="_blank"><img src="../images/youtube.png" alt="YouTube" class="youtube-icon"></a>
+            </div>
+        </div>
+
+          <script>
+            let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let box = document.querySelector('.box');
+
+let degrees = 0;
+
+prev.addEventListener('click', function() {
+    degrees += 90; // Adjust rotation angle for 4 images
+    box.style.transform = `rotateY(${degrees}deg)`;
+});
+
+next.addEventListener('click', function() {
+    degrees -= 90; // Adjust rotation angle for 4 images
+    box.style.transform = `rotateY(${degrees}deg)`;
+});
+
+        </script>

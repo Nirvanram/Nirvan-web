@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Client</title>
+    <link rel="stylesheet" href="../css/client.css">
+    <script>
+        function showSidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <nav>
+        <!-- Sidebar for mobile view -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/portfolio.html">Portfolio</a></li>
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Desktop view -->
+        <ul>
+            <li><a href="../index.html"><img src="../images/logo.png" class="logo" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="../html/about.html"><img src="../images/about.png" alt="About" class="about"></a></li>
+            <li class="hideOnMobile"><a href="../html/portfolio.html"><img src="../images/portfolio.png" alt="Portfolio" class="portfolio"></a></li>
+            <li class="hideOnMobile"><a href="../html/services.html"><img src="../images/services.png" alt="Services" class="services"></a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html"><img src="../images/CONTACT.png" alt="Contact"></a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="black-background">
+        <div class="services-container">
+			<div class="line2"></div>
+			<h2>CLIENT WORK</h2>
+			<div class="line2"></div>
+		</div>
+
+        <div class="client-work-container">
+            <div class="yellow-box">
+                <img src="../images/clientmclogo.png" alt="Image in Yellow Box" class="yellow-box-image">
+                <p class="yellow-box-paragraph">
+                    Designed in 2023
+                    <br><br>
+                    I was tasked to rebrand their whole design for their premium/luxury and gourmet brand. The goal was to make it same style of services but change it into a premium version. Which means creating a new version of the Mc Donald logo, Menu, 1 E-newsletter and 1 Design for Billboard.
+                </p>
+            </div>
+            <div class="right-image">
+                <img src="../images/clientmcdonaldlogo.jpg" alt="Right Image">
+            </div>
+        </div>
+
+        <!-- Responsive line in a parent container -->
+<div class="line-container">
+    <div class="line"></div>
+</div>
+
+<div class="menu-card-">
+    <p class="menu-card-text">Menu Card</p>
+</div>
+<div class="menu-image">
+    <div class="menu-box">
+        <img src="../images/menucard1.jpg" alt="First Image">
+    </div>
+    <div class="menu-box">
+        <img src="../images/menucard2.jpg" alt="Second Image">
+    </div>
+</div>
+
+<div class="billboard-card-">
+    <p class="billboard-card-text">BillBoard</p>
+</div>
+<div class="billboard-image">
+    <div class="billboard-box">
+        <img src="../images/billboard.jpg" alt="First Image">
+    </div>
+</div>
+
+<div class="E-newsletter">
+    <p class="E-newsletter-text">E-Newsletter</p>
+</div>
+<div class="E-newsletter-image">
+    <div class="E-newsletter-box">
+        <img src="../images/E-newsletter.jpg" alt="First Image">
+    </div>
+</div>
+
+<div class="line-container">
+    <div class="line"></div>
+</div>
+<p class="copyright-text">© 2024 • NIRVAN RAMDOSS • ALL RIGHTS RESERVED</p>
+
+<div class="social-media-icons">
+    <a href="https://www.instagram.com/_huntex/" target="_blank"><img src="../images/instagram.png" alt="Instagram" class="instagram-icon"></a>
+    <a href="https://www.youtube.com/watch?v=snWVW9oR4Zc&ab_channel=NirvanRamdoss" target="_blank"><img src="../images/youtube.png" alt="YouTube" class="youtube-icon"></a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>SERV</title>
+    <link rel="stylesheet" href="../css/abt.css">
+    <script>
+        function showSidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <nav>
+        <!-- Sidebar for mobile view -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/portfolio.html">Portfolio</a></li>
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Desktop view -->
+        <ul>
+            <li><a href="../index.html"><img src="../images/logo.png" class="logo" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="../html/about.html"><img src="../images/about.png" alt="About" class="about"></a></li>
+            <li class="hideOnMobile"><a href="../html/portfolio.html"><img src="../images/portfolio.png" alt="Portfolio" class="portfolio"></a></li>
+            <li class="hideOnMobile"><a href="../html/services.html"><img src="../images/services.png" alt="Services" class="services"></a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html"><img src="../images/CONTACT.png" alt="Contact"></a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="black-background">
+        <div class="services-container">
+			<div class="line"></div>
+			<h2>SERVICES</h2>
+			<div class="line"></div>
+		</div>
+
+
+        <div class="boxes-container">
+            <!-- Existing boxes -->
+            <div class="box left">
+                <div class="box-content">
+                    <img src="../images/photoediting.png" alt="Image" class="box-image photoediting">
+                    <h3>PHOTO EDITING</h3>
+                    <div class="underline"></div>
+                    <p>Bring your ideas to life with striking and creative poster designs. Whether you need promotional posters for events, eye-catching advertisements, or impactful educational materials, I craft designs that captivate and communicate effectively. Each poster is tailored to your vision, ensuring your message stands out in vibrant, memorable ways.</p>
+                </div>
+            </div>
+        
+            <div class="box middle-box">
+                <div class="box-content">
+                    <img src="../images/logo-design.png" alt="Poster" class="box-image logo-design">
+                    <h3 class="box-text">LOGO DESIGN</h3>
+                    <p class="box-paragraph">Your brand’s identity starts with a powerful logo. I specialize in creating unique and professional logos that represent your brand's essence and values. From concept to completion, I work closely with you to develop a logo that not only looks great but also resonates with your target audience, leaving a lasting impression.</p>
+                </div>
+            </div>
+        
+            <div class="box right-box">
+                <div class="box-content">
+                    <img src="../images/video-editing.png" alt="Video" class="box-image video-editing">
+                    <h3 class="box-text">VIDEO EDITING</h3>
+                    <p class="box-paragraph">Transform raw footage into captivating visual stories with my video editing services. Whether for social media, corporate presentations, or personal projects, I expertly cut, enhance, and assemble your content into polished, engaging videos. Let's collaborate to create videos that captivate your audience and convey your message powerfully.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New boxes -->
+        <div class="new-boxes-container">
+            <div class="new-box box-left">
+                <div class="box-content">
+                    <img src="../images/brochure-design.png" alt="New Image 1" class="box-image box-image-one">
+                    <h3>BROCHURE DESIGN</h3>
+                    <div class="underline"></div>
+                    <p>Ignite curiosity with brochures that captivate and inspire. I design visually striking brochures that turn your business story or product into a compelling work of art, combining engaging visuals with impactful content.</p>
+                </div>
+            </div>
+            <div class="new-box box-middle">
+                <div class="box-content">
+                    <img src="../images/3d.png" alt="New Image 2" class="box-image box-image-two">
+                    <h3>3D EDITING</h3>
+                    <div class="underline"></div>
+                    <p>Bring your concepts to life with detailed 3D modeling. Whether for product prototypes or architectural designs, I create vivid, tangible visuals that make your ideas come alive and help you explore your vision in new dimensions.</p>
+                </div>
+            </div>
+            <div class="new-box box-right">
+                <div class="box-content">
+                    <img src="../images/webdesign.png" alt="New Image 3" class="box-image box-image-three">
+                    <h3>WEB DESIGN</h3>
+                    <div class="underline"></div>
+                    <p>Transform your online presence with custom web design that reflects your brand and engages visitors. I create visually stunning and user-friendly websites that leave a lasting impression and turn visitors into loyal customers.</p>
+                </div>
+            </div>
+            </div>
+
+       <!-- Last Boxes -->
+<div class="last-boxes-container">
+    <div class="last-box box-left">
+        <div class="box-content">
+            <img src="../images/poster-design.png" alt="Poster Design" class="box-image box-image-poster">
+            <h3>POSTER DESIGN</h3>
+            <div class="underline"></div>
+            <p>Bring your ideas to life with striking and creative poster designs. Whether you need promotional posters for events, eye-catching advertisements, or impactful educational materials, I craft designs that captivate and communicate effectively. Each poster is tailored to your vision, ensuring your message stands out in vibrant, memorable ways.</p>
+        </div>
+    </div>
+    <div class="last-box box-right">
+        <div class="box-content">
+            <img src="../images/branding.png" alt="Branding" class="box-image box-image-branding">
+            <h3>BRANDING</h3>
+            <div class="underline"></div>
+            <p>Build a standout brand with a cohesive identity that resonates deeply. I offer full branding services, from distinctive logo design to comprehensive brand guidelines, ensuring every element reflects your essence and connects with your audience. Let’s create a brand that’s both memorable and impactful.</p>
+        </div>
+    </div>
+</div>
+
+<p class="copyright-text">© 2024 • NIRVAN RAMDOSS • ALL RIGHTS RESERVED</p>
+
+<div class="social-media-icons">
+    <a href="#" target="_blank"><img src="../images/instagram.png" alt="Instagram" class="instagram-icon"></a>
+    <a href="#" target="_blank"><img src="../images/youtube.png" alt="YouTube" class="youtube-icon"></a>
+</div>
+</div>
+
+</body>
+</html>
+
