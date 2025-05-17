@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+	<script>
+        function showSidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!--header-->
+    <nav>
+        <!-- Sidebar for mobile view -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="html/about.html">About</a></li>
+            <li><a href="html/portfolio.html">Portfolio</a></li>
+            <li><a href="html/services.html">Services</a></li>
+            <li><a href="html/contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Desktop view -->
+        <ul>
+            <li><a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="html/about.html"><img src="images/about.png" alt="About" class="about"></a></li>
+            <li class="hideOnMobile"><a href="html/portfolio.html"><img src="images/portfolio.png" alt="Portfolio" class="portfolio"></a></li>
+            <li class="hideOnMobile"><a href="html/services.html"><img src="images/services.png" alt="Services" class="services"></a></li>
+            <li class="hideOnMobile"><a href="html/contact.html"><img src="images/CONTACT.png" alt="Contact"></a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--for the me image-->
+    <div class="yellow-background">
+        <img src="images/mepicture.jpg" alt="Centered Image" class="centered-image">
+    </div>
+
+    <!--galaxy image-->
+    <div class="galaxy">
+        <img src="images/quote.jpg"  alt="Image">
+    </div>
+
+
+
+    <div class="black-background">
+		<div class="services-container">
+			<div class="line"></div>
+			<h2>SERVICES</h2>
+			<div class="line"></div>
+		</div>
+
+        <div class="boxes-container">
+            <div class="box">
+                <img src="images/poster-design.png" alt="Image 1" class="box-image image1">
+                <h3 class="box-title">POSTER DESIGN</h3>
+                <p class="box-description">Bring your ideas to life with striking and creative poster designs. Whether you need promotional posters for events, eye-catching advertisements, or impactful educational materials, I craft designs that captivate and communicate effectively. Each poster is tailored to your vision, ensuring your message stands out in vibrant, memorable ways.</p>
+            </div>
+    
+            <div class="box">
+                <img src="images/logo-design.png" alt="Image 2" class="box-image image2">
+                <h3 class="box-title">LOGO DESIGN </h3>
+                <p class="box-description">Your brand’s identity starts with a powerful logo. I specialize in creating unique and professional logos that represent your brand's essence and values. From concept to completion, I work closely with you to develop a logo that not only looks great but also resonates with your target audience, leaving a lasting impression.                </p>
+            </div>
+    
+            <div class="box">
+                <img src="images/video-editing.png" alt="Image 3" class="box-image image3">
+                <h3 class="box-title">VIDEO EDITING                </h3>
+                <p class="box-description">Transform raw footage into captivating visual stories with my video editing services. Whether for social media, corporate presentations, or personal projects, I expertly cut, enhance, and assemble your content into polished, engaging videos. Let's collaborate to create videos that captivate your audience and convey your message powerfully.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="view-more-container">
+            <a href="html/services.html"><button class="bn632-hover bn28">VIEW MORE</button></a>
+        </div>
+
+        <div class="services-container">
+			<div class="line"></div>
+			<h2>LATEST</h2>
+			<div class="line"></div>
+		</div>
+
+        <div class="image-text-container">
+            <img src="images/pic-fo-rmcdonald.jpg" alt="Description" class="left-image">
+            <div class="yellow-box">
+                <img src="images/mc-donald.png" alt="Boxt Image" class="boxt-image">
+                <p class="boxt-description">I recently worked on an exciting rebrand for McDonald's luxury and gourmet line as a university project. The new logo blends sophistication with the iconic golden arches, capturing the essence of premium burgers, artisanal coffee, and exquisite pastries. This project also included designing their menu boards and other visual elements to enhance the upscale experience while keeping McDonald's familiar charm.</p>
+                <p class="explore-more">
+                    Explore more of this project <a href="html/client.html">HERE</a>
+                </p>
+            </div>
+        </div>
+
+        <p class="project-help-text">Have a project can help you with?</p>
+
+        <div class="click-here-container">
+            <a href="html/contact.html"><button class="bn632-hover bn28">CLICK HERE</button></a>
+        </div>
+
+        <p class="copyright-text">© 2024 • NIRVAN RAMDOSS • ALL RIGHTS RESERVED</p>
+
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/_huntex/" target="_blank"><img src="images/instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <a href="https://www.youtube.com/watch?v=snWVW9oR4Zc&ab_channel=NirvanRamdoss" target="_blank"><img src="images/youtube.png" alt="YouTube" class="youtube-icon"></a>
+        </div>
+</div>
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
